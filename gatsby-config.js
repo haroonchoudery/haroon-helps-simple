@@ -123,6 +123,13 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://admin.haroonhelps.com`,
+        contentApiKey: `cdee32ab3ba8cdf02735b10841`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
