@@ -17,15 +17,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 }
             }
         }
-        allGhostTag(sort: { order: ASC, fields: name }) {
-            edges {
-                node {
-                    slug
-                    url
-                    postCount
-                }
-            }
-        }
         allGhostAuthor(sort: { order: ASC, fields: name }) {
             edges {
                 node {
@@ -59,14 +50,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  const tags = result.data.allGhostTag.edges
+  // const tags = result.data.allGhostTag.edges
   const authors = result.data.allGhostAuthor.edges
   const pages = result.data.allGhostPage.edges
   const posts = result.data.allGhostPost.edges
 
   // Define a template for blog post
   // const indexTemplate = path.resolve(`./src/templates/index.js`)
-  const tagsTemplate = path.resolve(`./src/templates/tag.js`)
+  // const tagsTemplate = path.resolve(`./src/templates/tag.js`)
   const authorTemplate = path.resolve(`./src/templates/author.js`)
   const pageTemplate = path.resolve(`./src/templates/page.js`)
   const postTemplate = path.resolve(`./src/templates/post.js`)
