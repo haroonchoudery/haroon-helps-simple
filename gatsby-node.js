@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { paginate } = require(`gatsby-awesome-pagination`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -63,7 +64,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allGhostPost.edges
 
   // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const indexTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const tagsTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const authorTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const pageTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const postTemplate = path.resolve(`./src/templates/blog-post.js`)
 
     // Create tag pages
   tags.forEach(({ node }) => {
@@ -161,19 +166,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const value = createFilePath({ node, getNode })
 
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     })
+//   }
+// }
 
 // exports.createSchemaCustomization = ({ actions }) => {
 //   const { createTypes } = actions
