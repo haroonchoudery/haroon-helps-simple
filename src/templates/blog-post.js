@@ -72,7 +72,7 @@ export const postQuery = graphql`
       title
       og_description
       excerpt
-      published_at
+      published_at(formatString: "MMMM DD, YYYY")
       html
       slug
     }
