@@ -1,4 +1,5 @@
 const path = require(`path`)
+const { postsPerPage } = require(`./src/utils/siteConfig`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const { paginate } = require(`gatsby-awesome-pagination`)
 
