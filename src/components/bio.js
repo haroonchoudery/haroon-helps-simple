@@ -8,6 +8,45 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+// import * as bioStyles from "./bio.module.css"
+import styled from "styled-components"
+import { render } from "react-dom"
+
+export function StatImage() {
+  return(
+    <StaticImage
+        className="bio-avatar"
+        layout="fixed"
+        formats={["AUTO", "WEBP", "AVIF"]}
+        src="../images/profile-pic.png"
+        width={150}
+        height={150}
+        quality={95}
+        alt="Profile picture"
+        // css={`text-color: red`}
+      />
+    )
+}
+
+const BioDiv = styled.div`
+  padding-top: 4.2rem;
+  margin-bottom: 6.2rem;
+  @media (max-width: 768px) {
+    display: block;
+  }
+`
+
+const BioText = styled.p`
+  font-family: Roboto Mono;
+  font-weight: 700;
+  font-size: 28px;
+  word-spacing: 0.03em;
+  line-height: 2.7rem;
+  margin-left: 2.2rem;
+  @media (max-width: 768px) {
+    margin-left: 0.8rem;
+  }
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -31,27 +70,15 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
+    <BioDiv className="bio">
+      <StatImage />
       {author?.name && (
-        <p>
+        <BioText>
           {author?.summary || null}
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
+        </BioText>
       )}
-    </div>
+    </BioDiv>
   )
 }
 

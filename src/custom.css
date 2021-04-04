@@ -1,0 +1,8 @@
+/* .bio p {
+    font-size: 28px;
+    font-weight: 700;
+} */
+
+.gatsby-image-wrapper.bio-avatar {
+    min-width: 150px;
+}

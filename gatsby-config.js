@@ -3,7 +3,7 @@ module.exports = {
     title: `Haroon Helps`,
     author: {
       name: `Haroon Choudery`,
-      summary: `Helping futureproof you in a changing world.`,
+      summary: `Hey, I'm Haroon. I'm a product marketing manager based in New York.`,
     },
     description: `Helping futureproof you in a changing world.`,
     siteUrl: `https://haroonhelps.com/`,
@@ -11,6 +11,16 @@ module.exports = {
       twitter: `haroonchoudery`,
       instagram: `haroonhelps`,
     },
+    menuLinks: [
+      {
+        name: 'Home',
+        link: '/'
+      },
+      {
+        name: 'About',
+        link: '/about'
+      },
+    ]
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -124,12 +134,26 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-styled-components`,
+    `babel-plugin-styled-components`,
     {
       resolve: `gatsby-source-ghost`,
       options: {
         apiUrl: `https://admin.haroonhelps.com`,
         contentApiKey: `cdee32ab3ba8cdf02735b10841`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto`,
+          `Roboto Mono`,
+          `Open Sans`,
+          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

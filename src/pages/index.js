@@ -4,6 +4,37 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styled from "styled-components"
+
+const IndexHeader = styled.div`
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-family: Roboto Mono,sans-serif;
+  font-weight: 700;
+`
+
+const ArticleTitle = styled.h2`
+  &&&{
+  margin-bottom: -.6rem;
+  font-size: 1.48rem;
+  margin-top: 2.1rem;
+  line-height: 2rem;
+  // font-weight: 500;
+  letter-spacing: .05em;
+  font-family: Open Sans;
+  color: #000;
+}
+`
+
+const ArticleDetails = styled.p`
+  display: inline-block;
+  font-family: Roboto Mono,sans-serif;
+  font-size: .98rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  color: #4a5568;
+`
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allGhostPost.edges
@@ -27,6 +58,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      <IndexHeader>Recent Posts</IndexHeader>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.node.title || post.node.slug
@@ -39,12 +71,12 @@ const BlogIndex = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 <header>
-                  <h2>
+                  <ArticleTitle>
                     <Link to={post.node.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
-                  </h2>
-                  <small>{post.node.published_at}</small>
+                  </ArticleTitle>
+                  <ArticleDetails>{post.node.published_at}</ArticleDetails>
                 </header>
                 <section>
                   <p
