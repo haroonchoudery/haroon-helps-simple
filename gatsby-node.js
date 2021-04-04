@@ -65,11 +65,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allGhostPost.edges
 
   // Define a template for blog post
-  const indexTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const tagsTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const authorTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const pageTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const postTemplate = path.resolve(`./src/templates/blog-post.js`)
+  // const indexTemplate = path.resolve(`./src/templates/index.js`)
+  const tagsTemplate = path.resolve(`./src/templates/tag.js`)
+  const authorTemplate = path.resolve(`./src/templates/author.js`)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
+  const postTemplate = path.resolve(`./src/templates/post.js`)
 
   //   // Create tag pages
   // tags.forEach(({ node }) => {
@@ -151,20 +151,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
   })
 
-  // Create pagination
-  paginate({
-      createPage,
-      items: posts,
-      itemsPerPage: postsPerPage,
-      component: indexTemplate,
-      pathPrefix: ({ pageNumber }) => {
-          if (pageNumber === 0) {
-              return `/`
-          } else {
-              return `/page`
-          }
-      },
-  })
+  // // Create pagination
+  // paginate({
+  //     createPage,
+  //     items: posts,
+  //     itemsPerPage: postsPerPage,
+  //     component: indexTemplate,
+  //     pathPrefix: ({ pageNumber }) => {
+  //         if (pageNumber === 0) {
+  //             return `/`
+  //         } else {
+  //             return `/page`
+  //         }
+  //     },
+  // })
 }
 
 // exports.onCreateNode = ({ node, actions, getNode }) => {
