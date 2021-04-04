@@ -4,15 +4,8 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SubstackForm from "../components/substack"
 import styled from "styled-components"
-
-const IndexHeader = styled.div`
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  font-family: var(--fontFamily-alt);
-  font-weight: 700;
-`
 
 const ArticleTitle = styled.h2`
   &&&{
@@ -34,6 +27,14 @@ const ArticleDetails = styled.p`
   font-weight: 700;
   line-height: 1.8rem;
   color: #4a5568;
+`
+
+const ReadMoreButton = styled.p`
+  font-family: var(--fontFamily-alt);
+  font-size: 1.1rem;
+  color: #4a5568;
+  font-weight: 400;
+  box-shadow: none;
 `
 
 const BlogIndex = ({ data, location }) => {
@@ -58,7 +59,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <IndexHeader>Recent Posts</IndexHeader>
+      <div className="alt-header">Recent Posts</div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.node.title || post.node.slug
@@ -91,6 +92,8 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      <ReadMoreButton><Link to="/blog">Read More Posts →</Link></ReadMoreButton>
+      <SubstackForm />
     </Layout>
   )
 }
@@ -104,7 +107,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allGhostPost(sort: {fields: published_at, order: DESC}, limit: 1000) {
+    allGhostPost(sort: {fields: published_at, order: DESC}, limit: 3) {
       edges {
         node {
           slug

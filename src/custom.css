@@ -6,3 +6,11 @@
 .gatsby-image-wrapper.bio-avatar {
     min-width: 150px;
 }
+
+.alt-header {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-family: var(--fontFamily-alt);
+  font-weight: 700;
+}
