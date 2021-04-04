@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: `https://haroonhelps.com/`,
     social: {
       twitter: `haroonchoudery`,
+      instagram: `haroonhelps`,
     },
   },
   plugins: [
