@@ -10,7 +10,7 @@ const IndexHeader = styled.div`
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: .12em;
-  font-family: Roboto Mono,sans-serif;
+  font-family: var(--fontFamily-alt);
   font-weight: 700;
 `
 
@@ -29,7 +29,7 @@ const ArticleTitle = styled.h2`
 
 const ArticleDetails = styled.p`
   display: inline-block;
-  font-family: Roboto Mono,sans-serif;
+  font-family: var(--fontFamily-alt);
   font-size: .98rem;
   font-weight: 700;
   line-height: 1.8rem;

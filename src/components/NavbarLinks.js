@@ -10,7 +10,7 @@ const NavItem = styled(Link)`
   margin: 0 1vw;
   transition: all 200ms ease-in;
   position: relative;
-  font-family: Roboto Mono;
+  font-family: var(--fontFamily-alt);
   letter-spacing: 0.2em;
 
   :after {

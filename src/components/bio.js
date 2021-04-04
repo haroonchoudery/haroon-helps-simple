@@ -81,7 +81,7 @@ const Bio = () => {
           <a href="https://twitter.com/haroonchoudery">
             Hey, I'm Haroon.
           </a> 
-          <font color="#718096"> I'm a product marketing manager based in New York.</font>
+          <font color="#718096"> I want to help you become futureproof.</font>
         </BioText>
       )}
     </BioDiv>
