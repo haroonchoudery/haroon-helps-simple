@@ -29,12 +29,13 @@ const ArticleDetails = styled.p`
   color: #4a5568;
 `
 
-const ReadMoreButton = styled.p`
+const ReadMoreButton = styled(Link)`
   font-family: var(--fontFamily-alt);
   font-size: 1.1rem;
-  color: #4a5568;
+  color: #blue;
   font-weight: 400;
   box-shadow: none;
+  text-decoration: none;
 `
 
 const BlogIndex = ({ data, location }) => {
@@ -92,7 +93,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
-      <ReadMoreButton><Link to="/blog">Read More Posts →</Link></ReadMoreButton>
+      <ReadMoreButton to="/blog">Read More Posts →</ReadMoreButton>
       <SubstackForm />
     </Layout>
   )

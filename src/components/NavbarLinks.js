@@ -42,8 +42,9 @@ const NavItem = styled(Link)`
 const NavbarLinks = () => {
   return (
     <>
+      <NavItem to="/blog">Blog</NavItem>
       <NavItem to="/">About</NavItem>
-      <NavItem to="/404">Nonprofit</NavItem>
+      <NavItem to="https://aiforanyone.org">Nonprofit</NavItem>
     </>
   )
 }
