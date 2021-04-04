@@ -72,7 +72,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allGhostPost(sort: {fields: published_at, order: ASC}, limit: 1000) {
+    allGhostPost(sort: {fields: published_at, order: DESC}, limit: 1000) {
       edges {
         node {
           slug
