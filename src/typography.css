@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "FuturaNowHeadline";
+    src: url("./fonts/FuturaNowHeadline-Bd.otf");
+  }
+
+@font-face {
+    font-family: "DarkmodeBold";
+    src: url("./fonts/Darkmode_W_DarkmodeOffBd.woff2");
+}
+
+@font-face {
+    font-family: "DarkmodeBlack";
+    src: url("./fonts/Darkmode_W_DarkmodeOffBlk.woff2");
+}
+
+@font-face {
+    font-family: "DarkmodeLight";
+    src: url("./fonts/Darkmode_W_DarkmodeOffLt.woff2");
+}
+
+@font-face {
+    font-family: "DarkmodeMedium";
+    src: url("./fonts/Darkmode_W_DarkmodeOffMd.woff2");
+}
+
+@font-face {
+    font-family: "DarkmodeRegular";
+    src: url("./fonts/Darkmode_W_DarkmodeOffRg.woff2");
+}
+
+@font-face {
+    font-family: "DarkmodeThin";
+    src: url("./fonts/Darkmode_W_DarkmodeOffTh.woff2");
+}

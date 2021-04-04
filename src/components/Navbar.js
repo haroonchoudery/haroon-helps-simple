@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 const Title = styled.h2`
   font-size: 19px;
-  font-family: "Open Sans", Roboto, "Helvetica Neue", sans-serif;
+  font-family: FuturaNowHeadline, Helvetica Neue, Open Sans, sans-serif;
   text-align: center;
   vertical-align: middle;
   margin: auto 0;

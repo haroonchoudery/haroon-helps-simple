@@ -37,7 +37,7 @@ const BioDiv = styled.div`
 `
 
 const BioText = styled.p`
-  font-family: Roboto Mono;
+  font-family: FuturaNowHeadline, Helvetica Neue, Open Sans;
   font-weight: 700;
   font-size: 28px;
   word-spacing: 0.03em;
@@ -45,6 +45,10 @@ const BioText = styled.p`
   margin-left: 2.2rem;
   @media (max-width: 768px) {
     margin-left: 0.8rem;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
   }
 `
 
@@ -74,8 +78,10 @@ const Bio = () => {
       <StatImage />
       {author?.name && (
         <BioText>
-          {author?.summary || null}
-          {` `}
+          <a href="https://twitter.com/haroonchoudery">
+            Hey, I'm Haroon.
+          </a> 
+          <font color="#718096"> I'm a product marketing manager based in New York.</font>
         </BioText>
       )}
     </BioDiv>
