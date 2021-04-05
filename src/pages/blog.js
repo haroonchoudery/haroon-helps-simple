@@ -61,7 +61,7 @@ const BlogPage = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
         <IndexHeader>All Posts</IndexHeader>
-        <IndexSubtitle>Subscribe to my <a href={data.site.siteMetadata.socials.substack} target="_blank">newsletter</a> to get future posts straight to your inbox.</IndexSubtitle>
+        <IndexSubtitle>Pro tip: Subscribe to my <a href={data.site.siteMetadata.socials.substack} target="_blank">newsletter</a> to get future posts straight to your inbox.</IndexSubtitle>
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {
             const title = post.node.title || post.node.slug
