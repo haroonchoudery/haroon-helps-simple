@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const items = result.data.allGhostPost.edges
   items.forEach(({ node }) => {
-    node.url = `/${node.slug}/`
+    node.url = `/blog/${node.slug}/`
     actions.createPage({
       path: node.url,
       component: postTemplate,

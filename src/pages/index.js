@@ -77,7 +77,7 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <ArticleTitle>
-                    <Link to={post.node.slug} itemProp="url">
+                    <Link to={`/blog/${post.node.slug}`} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </ArticleTitle>
