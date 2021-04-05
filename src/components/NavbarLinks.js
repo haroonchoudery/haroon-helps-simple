@@ -82,7 +82,7 @@ const NavbarLinks = () => {
   return (
     <>
       <NavItem to="/blog">Blog</NavItem>
-      <NavItem to="/">About</NavItem>
+      <NavItem to="/about">About</NavItem>
       <NavItemExternal href="https://aiforanyone.org" target="_blank">Nonprofit</NavItemExternal>
     </>
   )
