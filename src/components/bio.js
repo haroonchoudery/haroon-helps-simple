@@ -62,7 +62,7 @@ const Bio = () => {
             name
             summary
           }
-          social {
+          socials {
             twitter
             instagram
           }
@@ -73,14 +73,14 @@ const Bio = () => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
+  const socials = data.site.siteMetadata?.socials
 
   return (
     <BioDiv className="bio">
       <StatImage />
       {author?.name && (
         <BioText>
-          <a href={`https://twitter.com/${data.site.siteMetadata.social.instagram}`}>
+          <a href={data.site.siteMetadata.socials.instagram}>
             Hey, I'm Haroon.
           </a> 
           <font color="#718096"> I want to help you become futureproof.</font>

@@ -7,9 +7,10 @@ module.exports = {
     },
     description: `Helping futureproof you in a changing world.`,
     siteUrl: `https://haroonhelps.com/`,
-    social: {
-      twitter: `haroonchoudery`,
-      instagram: `haroonhelps`,
+    socials: {
+      twitter: `https://twitter.com/haroonchoudery`,
+      instagram: `https://instagram.com/haroonhelps`,
+      substack: `https://haroon.substack.com/welcome`
     },
     menuLinks: [
       {

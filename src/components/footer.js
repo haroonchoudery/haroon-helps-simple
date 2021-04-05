@@ -45,7 +45,7 @@ const Footer = () => {
     query FooterQuery {
         site {
         siteMetadata {
-            social {
+            socials {
             twitter
             instagram
             }
@@ -58,10 +58,10 @@ return (
     <FooterWrapper>
         <div>Haroon Choudery © {new Date().getFullYear()}</div>
         <SocialIcons>
-        <a href={`https://instagram.com/${data.site.siteMetadata.social.instagram}`} target="_blank" rel="noopener noreferrer">
+        <a href={data.site.siteMetadata.socials.instagram} target="_blank" rel="noopener noreferrer">
             <Instagram fill="#718096" size="26" height="26" width="26" />
         </a>    
-        <a href={`https://twitter.com/${data.site.siteMetadata.social.twitter}`} target="_blank" rel="noopener noreferrer">
+        <a href={data.site.siteMetadata.socials.twitter} target="_blank" rel="noopener noreferrer">
             <Twitter fill="#718096" size="26" height="26" width="26" />
         </a>
         </SocialIcons>

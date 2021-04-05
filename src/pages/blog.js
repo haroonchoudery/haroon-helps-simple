@@ -13,6 +13,11 @@ const IndexHeader = styled.div`
   font-family: var(--fontFamily-alt);
   font-weight: 700;
 `
+const IndexSubtitle = styled.p`
+  a {
+    text-decoration: none;
+  }
+`
 
 const ArticleTitle = styled.h2`
   &&&{
@@ -26,7 +31,6 @@ const ArticleTitle = styled.h2`
   color: #000;
 }
 `
-
 const ArticleDetails = styled.p`
   display: inline-block;
   font-family: var(--fontFamily-alt);
@@ -57,6 +61,7 @@ const BlogPage = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
         <IndexHeader>All Posts</IndexHeader>
+        <IndexSubtitle>Subscribe to my <a href={data.site.siteMetadata.socials.substack} target="_blank">newsletter</a> to get future posts straight to your inbox.</IndexSubtitle>
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {
             const title = post.node.title || post.node.slug
@@ -95,6 +100,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        socials {
+          substack
+        }
       }
     }
     allGhostPost(sort: {fields: published_at, order: DESC}, limit: 1000) {
