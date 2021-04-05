@@ -38,7 +38,7 @@ const PageTemplate = ({ data, location }) => {
           <SubstackForm />
         </footer>
       </article>
-      <nav className="blog-post-nav">
+      {/* <nav className="blog-post-nav">
         <ul
           style={{
             display: `flex`,
@@ -63,7 +63,7 @@ const PageTemplate = ({ data, location }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </Layout>
   )
 }
