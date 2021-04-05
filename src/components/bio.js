@@ -23,7 +23,6 @@ export function StatImage() {
         height={150}
         quality={95}
         alt="Profile picture"
-        // css={`text-color: red`}
       />
     )
 }
