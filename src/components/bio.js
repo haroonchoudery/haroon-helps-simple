@@ -8,7 +8,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-// import * as bioStyles from "./bio.module.css"
 import styled from "styled-components"
 import { render } from "react-dom"
 
@@ -29,15 +28,17 @@ export function StatImage() {
 }
 
 const BioDiv = styled.div`
-  padding-top: 4.2rem;
-  margin-bottom: 6.2rem;
-  @media (max-width: 768px) {
-    display: block;
-  }
+  &&&{
+    padding-top: 3rem;
+    margin-bottom: 4rem;
+    @media (max-width: 768px) {
+      display: block;
+    }
+}
 `
 
 const BioText = styled.p`
-  font-family: Roboto Mono, FuturaNowHeadline, Helvetica Neue, Open Sans;
+  font-family: FuturaNowHeadline, Roboto Mono, Helvetica Neue, Open Sans;
   font-weight: 700;
   font-size: 28px;
   word-spacing: 0.03em;

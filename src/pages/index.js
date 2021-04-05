@@ -119,7 +119,7 @@ export const pageQuery = graphql`
           title
           og_description
           excerpt
-          published_at(formatString: "MMMM DD, YYYY")
+          published_at(formatString: "MMM D, YYYY")
           reading_time
           tags {
             name

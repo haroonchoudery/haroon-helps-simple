@@ -9,6 +9,10 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.ghostPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const title = post.title || post.node.slug
+  const publish_date = post.published_at || "Undated"
+  const reading_time = post.reading_time + 1 || "1"
+  const category = post.tags[0]?.name || "Uncategorized"
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -23,7 +27,7 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.title}</h1>
-          <p>{post.published_at}</p>
+          <p>{publish_date} • {reading_time} min • {category}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -75,6 +79,10 @@ export const postQuery = graphql`
       published_at(formatString: "MMMM DD, YYYY")
       html
       slug
+      reading_time
+      tags {
+          name
+      }
     }
     site {
       siteMetadata {
