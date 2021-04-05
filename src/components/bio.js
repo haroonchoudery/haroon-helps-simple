@@ -37,7 +37,7 @@ const BioDiv = styled.div`
 `
 
 const BioText = styled.p`
-  font-family: Helvetica Neue, FuturaNowHeadline, Open Sans;
+  font-family: Roboto Mono, FuturaNowHeadline, Helvetica Neue, Open Sans;
   font-weight: 700;
   font-size: 28px;
   word-spacing: 0.03em;

@@ -64,6 +64,9 @@ const BlogIndex = ({ data, location }) => {
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.node.title || post.node.slug
+          const publish_date = post.node.published_at || "Undated"
+          const reading_time = post.node.reading_time + 1 || "1"
+          const category = post.node.tags[0]?.name || "Uncategorized"
 
           return (
             <li key={post.node.slug}>
@@ -78,7 +81,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </ArticleTitle>
-                  <ArticleDetails>{post.node.published_at}</ArticleDetails>
+                  <ArticleDetails>{publish_date} • {reading_time} min • {category}</ArticleDetails>
                 </header>
                 <section>
                   <p
@@ -117,6 +120,10 @@ export const pageQuery = graphql`
           og_description
           excerpt
           published_at(formatString: "MMMM DD, YYYY")
+          reading_time
+          tags {
+            name
+          }
         }
       }
     }
