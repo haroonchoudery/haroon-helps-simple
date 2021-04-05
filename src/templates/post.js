@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SubstackForm from "../components/substack"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.ghostPost
@@ -33,9 +34,9 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
+        <hr className="spacing-top" />
         <footer>
-          <Bio />
+          <SubstackForm />
         </footer>
       </article>
       <nav className="blog-post-nav">

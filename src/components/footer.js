@@ -29,8 +29,6 @@ const FooterWrapper = styled.div`
 color: #718096;
 display: flex;
 margin-top: 2rem;
-padding-top: 1rem;
-border-top: 0.5px solid;
 // margin-bottom: -1rem;
 // // -webkit-box-orient: horizontal;
 // // -webkit-box-direction: normal;

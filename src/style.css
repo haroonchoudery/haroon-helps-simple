@@ -326,6 +326,12 @@ a:focus {
   margin: var(--spacing-0);
 }
 
+.blog-post ul,
+.blog-post ol {
+  margin-left: var(--spacing-4);
+  list-style-position: outside;
+}
+
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
 }

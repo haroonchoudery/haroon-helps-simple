@@ -10,3 +10,7 @@
   font-family: var(--fontFamily-alt);
   font-weight: 700;
 }
+
+.spacing-top {
+  margin-top: var(--spacing-12)
+}

@@ -1,65 +1,88 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import * as React from "react"
+import { Link, graphql } from "gatsby"
 
-import { Layout } from '../components/common'
-import { MetaData } from '../components/common/meta'
+import Bio from "../components/bio"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import SubstackForm from "../components/substack"
 
-/**
-* Single page (/:slug)
-*
-* This file renders a single page and loads all the content.
-*
-*/
-const Page = ({ data, location }) => {
-    const page = data.ghostPage
+const PageTemplate = ({ data, location }) => {
+  const page = data.ghostPage
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const { previous, next } = data
+  const title = page.title || page.node.slug
+//   const publish_date = post.published_at || "Undated"
+//   const reading_time = post.reading_time + 1 || "1"
+//   const category = page.tags[0]?.name || "Uncategorized"
 
-    return (
-        <>
-            <MetaData
-                data={data}
-                location={location}
-                type="website"
-            />
-            <Helmet>
-                <style type="text/css">{`${page.codeinjection_styles}`}</style>
-            </Helmet>
-            <Layout>
-                <div className="container">
-                    <article className="content">
-                        <h1 className="content-title">{page.title}</h1>
-
-                        {/* The main page content */}
-                        <section
-                            className="content-body load-external-scripts"
-                            dangerouslySetInnerHTML={{ __html: page.html }}
-                        />
-                    </article>
-                </div>
-            </Layout>
-        </>
-    )
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO
+        title={page.title}
+        description={page.og_description || page.excerpt}
+      />
+      <article
+        className="blog-post"
+        itemScope
+        itemType="http://schema.org/Article"
+      >
+        <header>
+          <h1 itemProp="headline">{page.title}</h1>
+        </header>
+        <section
+          dangerouslySetInnerHTML={{ __html: page.html }}
+          itemProp="articleBody"
+        />
+        <hr />
+        <footer>
+          <SubstackForm />
+        </footer>
+      </article>
+      <nav className="blog-post-nav">
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && (
+              <Link to={previous.ghostPage.slug} rel="prev">
+                ← {previous.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={next.ghostPage.slug} rel="next">
+                {next.title} →
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
+    </Layout>
+  )
 }
 
-Page.propTypes = {
-    data: PropTypes.shape({
-        ghostPage: PropTypes.shape({
-            codeinjection_styles: PropTypes.object,
-            title: PropTypes.string.isRequired,
-            html: PropTypes.string.isRequired,
-            feature_image: PropTypes.string,
-        }).isRequired,
-    }).isRequired,
-    location: PropTypes.object.isRequired,
-}
+export default PageTemplate
 
-export default Page
-
-export const postQuery = graphql`
-    query($slug: String!) {
-        ghostPage(slug: { eq: $slug }) {
-            ...GhostPageFields
-        }
+export const pageQuery = graphql`
+  query($slug: String!) {
+    ghostPage(slug: { eq: $slug }) {
+      title
+      og_description
+      excerpt
+      html
+      slug
     }
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
 `
