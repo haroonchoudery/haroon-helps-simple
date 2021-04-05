@@ -21,7 +21,7 @@ export function StatImage() {
         width={150}
         height={150}
         quality={95}
-        imgStyle={{ borderRadius: '100%' }}
+        // imgStyle={{ borderRadius: '100%' }}
         alt="Profile picture"
       />
     )
