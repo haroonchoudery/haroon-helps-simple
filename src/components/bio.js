@@ -23,7 +23,6 @@ export function StatImage() {
         height={150}
         quality={95}
         alt="Profile picture"
-        style={{ borderRadius: 100 }}
       />
     )
 }
@@ -75,7 +74,7 @@ const Bio = () => {
 
   return (
     <BioDiv className="bio">
-      <StatImage />
+      <div className = "bio-avatar"><StatImage /></div>
       {author?.name && (
         <BioText>
           <a href="https://twitter.com/haroonchoudery">
