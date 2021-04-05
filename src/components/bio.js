@@ -23,6 +23,7 @@ export function StatImage() {
         height={150}
         quality={95}
         alt="Profile picture"
+        style={{ borderRadius: 100 }}
       />
     )
 }
