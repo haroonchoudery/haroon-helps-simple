@@ -47,10 +47,10 @@ return (
     <FooterWrapper>
         <div>Haroon Choudery © {new Date().getFullYear()}</div>
         <SocialIcons>
-        <a href="https://twitter.com/cdeweyx" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/haroonchoudery" target="_blank" rel="noopener noreferrer">
             <Twitter fill="#718096" size="26" height="26" width="26" />
         </a>
-        <a href="https://twitter.com/cdeweyx" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/haroonchoudery" target="_blank" rel="noopener noreferrer">
             <Instagram fill="#718096" size="26" height="26" width="26" />
         </a>
         </SocialIcons>
