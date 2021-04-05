@@ -342,3 +342,9 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+img, figure {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
