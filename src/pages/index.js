@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SubstackForm from "../components/substack"
+import Footer from "../components/footer"
 import styled from "styled-components"
 
 const ArticleTitle = styled.h2`
