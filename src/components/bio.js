@@ -64,6 +64,7 @@ const Bio = () => {
           }
           social {
             twitter
+            instagram
           }
         }
       }
@@ -79,7 +80,7 @@ const Bio = () => {
       <StatImage />
       {author?.name && (
         <BioText>
-          <a href="https://twitter.com/haroonchoudery">
+          <a href={`https://twitter.com/${data.site.siteMetadata.social.instagram}`}>
             Hey, I'm Haroon.
           </a> 
           <font color="#718096"> I want to help you become futureproof.</font>
