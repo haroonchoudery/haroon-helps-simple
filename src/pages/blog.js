@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import styled from "styled-components"
 
 const IndexHeader = styled.div`
@@ -46,7 +46,7 @@ const BlogPage = ({ data, location }) => {
     if (posts.length === 0) {
       return (
         <Layout location={location} title={siteTitle}>
-          <SEO title="All posts" />
+          <Seo title="All posts" />
           <Bio />
           <p>
             No blog posts found. Add markdown posts to "content/blog" (or the
@@ -59,9 +59,9 @@ const BlogPage = ({ data, location }) => {
   
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <Seo title="All posts" />
         <IndexHeader>All Posts</IndexHeader>
-        <IndexSubtitle>Pro tip: Subscribe to my <a href={data.site.siteMetadata.socials.substack} target="_blank">newsletter</a> to get future posts straight to your inbox.</IndexSubtitle>
+        <IndexSubtitle>Pro tip: Subscribe to my <a href={data.site.siteMetadata.socials.substack} target="_blank" rel="noreferrer">newsletter</a> to get future posts straight to your inbox.</IndexSubtitle>
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {
             const title = post.node.title || post.node.slug

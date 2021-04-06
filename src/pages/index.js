@@ -3,9 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import SubstackForm from "../components/substack"
-import Footer from "../components/footer"
 import styled from "styled-components"
 
 const ArticleTitle = styled.h2`
@@ -46,7 +45,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title={siteTitle} />
+        <Seo title={siteTitle} />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -59,7 +58,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={siteTitle} />
+      <Seo title={siteTitle} />
       <Bio />
       <div className="alt-header">Recent Posts</div>
       <ol style={{ listStyle: `none` }}>

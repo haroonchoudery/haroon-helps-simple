@@ -9,7 +9,6 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { render } from "react-dom"
 
 export function StatImage() {
   return(
@@ -80,7 +79,7 @@ const Bio = () => {
       <StatImage />
       {author?.name && (
         <BioText>
-          <a href={data.site.siteMetadata.socials.instagram}>
+          <a href={socials.instagram}>
             Hey, I'm Haroon.
           </a> 
           <font color="#718096"> I want to help you become futureproof.</font>

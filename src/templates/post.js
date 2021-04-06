@@ -1,15 +1,14 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import SubstackForm from "../components/substack"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.ghostPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  // const { previous, next } = data
   const title = post.title || post.node.slug
   const publish_date = post.published_at || "Undated"
   const reading_time = post.reading_time + 1 || "1"
@@ -17,8 +16,8 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.title}
+      <Seo
+        title={title}
         description={post.og_description || post.excerpt}
       />
       <article

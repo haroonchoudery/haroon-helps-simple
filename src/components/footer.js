@@ -1,9 +1,6 @@
 import * as React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import styled from "styled-components"
 import Twitter from "../images/twitter.svg"
 import Instagram from "../images/instagram.svg"
