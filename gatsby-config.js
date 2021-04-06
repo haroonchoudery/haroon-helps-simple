@@ -85,8 +85,8 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
-    // `gatsby-plugin-twitter`,
-    // `gatsby-plugin-instagram`,
+    `gatsby-plugin-twitter`,
+    `gatsby-plugin-instagram`,
     {
       resolve: `gatsby-source-ghost`,
       options: {
