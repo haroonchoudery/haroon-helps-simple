@@ -88,6 +88,16 @@ module.exports = {
     `gatsby-plugin-twitter`,
     `gatsby-plugin-instagram`,
     {
+      resolve: `gatsby-transformer-rehype`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-rehype-ghost-links`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-ghost`,
       options: {
         apiUrl: `https://admin.haroonhelps.com`,
