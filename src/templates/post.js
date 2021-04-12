@@ -5,21 +5,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import SubstackForm from "../components/substack"
 
-const ExternalLink = props => {
-	if (props.href.includes('haroonhelps.com') || props.href[0] === '/') {
-		return <a href={props.href}>{props.children}</a>
-	}
-	return (
-		<a href={props.href} target="_blank" rel="noopener noreferrer">
-			{props.children}
-		</a>
-	)
-}
-
-const components = {
-	a: ExternalLink,
-}
-
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.ghostPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -33,7 +18,7 @@ const BlogPostTemplate = ({ data, location }) => {
     const post = data.ghostPost
     return(
       <section
-      dangerouslySetInnerHTML={{ __html: post.html}}
+      dangerouslySetInnerHTML={{ __html: post.childHtmlRehype.html}}
       itemProp="articleBody">
       </section>
     )
@@ -54,7 +39,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{post.title}</h1>
           <p>{publish_date} • {reading_time} min • {category}</p>
         </header>
-        <GhostHTML components={components} />
+        <GhostHTML />
         <hr className="spacing-top" />
         <footer>
           <SubstackForm />
@@ -99,6 +84,9 @@ export const postQuery = graphql`
       og_description
       excerpt
       published_at(formatString: "MMMM DD, YYYY")
+      childHtmlRehype {
+        html
+      }
       html
       slug
       reading_time

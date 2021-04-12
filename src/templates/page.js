@@ -29,7 +29,7 @@ const PageTemplate = ({ data, location }) => {
           <h1 itemProp="headline">{page.title}</h1>
         </header>
         <section
-          dangerouslySetInnerHTML={{ __html: page.html }}
+          dangerouslySetInnerHTML={{ __html: page.childHtmlRehype.html }}
           itemProp="articleBody"
         />
         <hr />
@@ -75,7 +75,9 @@ export const pageQuery = graphql`
       title
       og_description
       excerpt
-      html
+      childHtmlRehype {
+        html
+      }
       slug
     }
     site {

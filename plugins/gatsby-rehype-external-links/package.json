@@ -1,0 +1,10 @@
+{
+    "name": "gatsby-rehype-external-links",
+    "version": "0.1.0",
+    "private": true,
+    "author": "Haroon Choudery haroon@choudery.com",
+    "license": "MIT",
+    "workspaces": [
+      "haroon-helps-simple"
+    ]
+}
