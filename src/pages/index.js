@@ -15,7 +15,7 @@ const ArticleTitle = styled.h2`
   line-height: 2rem;
   // font-weight: 500;
   letter-spacing: .05em;
-  font-family: FuturaNowHeadline, Helvetica Neue, Open Sans;
+  font-family: var(--fontFamily-sans-alt);
   color: #000;
 }
 `

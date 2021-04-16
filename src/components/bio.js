@@ -36,13 +36,16 @@ const BioDiv = styled.div`
 }
 `
 
-const BioText = styled.p`
-  font-family: FuturaNowHeadline, Roboto Mono, Helvetica Neue, Open Sans;
+const BioText = styled.h2`
+  font-family: var(--fontFamily-sans-alt);
+  // color: #718096;
+  color: var(--color-primary);
   font-weight: 700;
   font-size: 28px;
   word-spacing: 0.03em;
   line-height: 2.7rem;
   margin-left: 2.2rem;
+  margin-top: var(--spacing-6);
   @media (max-width: 768px) {
     margin-left: 0.8rem;
   }
@@ -82,7 +85,7 @@ const Bio = () => {
           <a href={socials.instagram}>
             Hey, I'm Haroon.
           </a> 
-          <font color="#718096"> I want to help you become futureproof.</font>
+          <font> I want to help you become futureproof.</font>
         </BioText>
       )}
     </BioDiv>

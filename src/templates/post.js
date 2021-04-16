@@ -1,9 +1,18 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import SubstackForm from "../components/substack"
+
+const Subtitle = styled.a`
+  display: inline-block;
+  font-family: var(--fontFamily-alt);
+  font-weight: 700;
+  line-height: 1.8rem;
+  color: #4a5568;
+`
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.ghostPost
@@ -37,7 +46,7 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.title}</h1>
-          <p>{publish_date} • {reading_time} min • {category}</p>
+          <Subtitle>{publish_date} • {reading_time} min • {category}</Subtitle>
         </header>
         <GhostHTML />
         <hr className="spacing-top" />

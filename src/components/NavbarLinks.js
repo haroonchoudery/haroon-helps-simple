@@ -10,7 +10,7 @@ const NavItem = styled(Link)`
   margin: 0 1vw;
   transition: all 200ms ease-in;
   position: relative;
-  font-family: var(--fontFamily-alt);
+  font-family: var(--fontFamily-sans-light);
   letter-spacing: 0.2em;
 
   :after {
@@ -21,13 +21,13 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: goldenrod;
+    background: var(--color-primary);
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: goldenrod;
+    color: var(--color-primary);
     ::after {
       width: 100%;
     }
@@ -48,7 +48,7 @@ const NavItemExternal = styled.a`
   margin: 0 1vw;
   transition: all 200ms ease-in;
   position: relative;
-  font-family: var(--fontFamily-alt);
+  font-family: var(--fontFamily-sans-light);
   letter-spacing: 0.2em;
 
   :after {
@@ -59,13 +59,13 @@ const NavItemExternal = styled.a`
     width: 0%;
     content: ".";
     color: transparent;
-    background: goldenrod;
+    background: var(--color-primary);
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: goldenrod;
+    color: var(--color-primary);
     ::after {
       width: 100%;
     }

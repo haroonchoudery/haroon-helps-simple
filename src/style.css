@@ -28,14 +28,21 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: "FuturaNowHeadline", "Helvetica Neue", "Open Sans", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily-sans: "InterExtraBold", "Helvetica Neue", "Open Sans", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "DarkmodeRegular", "Roboto", "Merriweather", "Georgia", Cambria, "Times New Roman",
     Times, serif;
+  --fontFamily-serif: "DarkmodeRegular", "Roboto", "Merriweather", "Georgia", Cambria, "Times New Roman",
+    Times, serif;
+  --fontFamily-sans-alt: "PoppinsBold", "FuturaNowHeadline";
+  --fontFamily-sans-body: "InterRegular";
+  --fontFamily-sans-light: "InterLight";
+  --fontFamily-sans-body-semibold: "InterSemiBold";
+  --fontFamily-sans-body-bold: "InterBold";  
   --fontFamily-alt: "Roboto Mono", sans-serif, Courier New;
-  --font-body: var(--fontFamily-serif);
-  --font-heading: var(--fontFamily-sans);
+  --font-body: var(--fontFamily-sans-body);
+  --font-heading: var(--fontFamily-sans-alt);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -56,7 +63,8 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  /* --color-primary: #005b99; */
+  --color-primary: #3289A6;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
@@ -84,7 +92,7 @@ body {
   font-size: var(--fontSize-1);
   color: var(--color-text);
   margin: 8px;
-  letter-spacing: .05em;
+  letter-spacing: .01em;
 }
 
 footer {
@@ -150,6 +158,7 @@ h6 {
 h1 > a {
   color: inherit;
   text-decoration: none;
+  font-family: var(--fontFamily-sans-alt);
 }
 
 h2 > a,
@@ -159,6 +168,7 @@ h5 > a,
 h6 > a {
   text-decoration: none;
   color: inherit;
+  font-family: var(--fontFamily-sans-alt);
 }
 
 /* Prose */
@@ -173,6 +183,10 @@ p {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+}
+
+strong {
+  font-family: var(--fontFamily-sans-body-bold);
 }
 
 ul,
@@ -239,11 +253,15 @@ table thead tr th {
 
 a {
   color: var(--color-primary);
+  font-family: var(--fontFamily-sans-body-semibold);
+  text-decoration: none;
 }
 
+p >
 a:hover,
-a:focus {
-  text-decoration: none;
+a:focus
+a:visited {
+  text-decoration: underline;
 }
 
 /* Custom classes */

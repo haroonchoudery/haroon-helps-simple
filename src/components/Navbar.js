@@ -6,11 +6,15 @@ import { Link } from "gatsby"
 
 const Title = styled.h2`
   font-size: 19px;
-  font-family: FuturaNowHeadline, Helvetica Neue, Open Sans, sans-serif;
+  font-family: var(--fontFamily-sans-alt);
+  color: var(--color-primary);
   text-align: center;
   vertical-align: middle;
   margin: auto 0;
   letter-spacing: 0.1em;
+  :hover {
+    text-decoration: none;
+  }
 `
 
 const Navigation = styled.nav`
