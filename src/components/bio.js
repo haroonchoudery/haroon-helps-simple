@@ -82,7 +82,7 @@ const Bio = () => {
       <StatImage />
       {author?.name && (
         <BioText>
-          <a href={socials.instagram}>
+          <a href={socials.instagram} target="_blank">
             Hey, I'm Haroon.
           </a> 
           <font> I want to help you become futureproof.</font>
