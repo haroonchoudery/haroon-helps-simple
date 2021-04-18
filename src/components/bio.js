@@ -42,7 +42,7 @@ const BioText = styled.h2`
   color: var(--color-primary);
   font-weight: 700;
   font-size: 28px;
-  word-spacing: 0.03em;
+  word-spacing: 0.01em;
   line-height: 2.7rem;
   margin-left: 2.2rem;
   margin-top: var(--spacing-6);

@@ -14,7 +14,8 @@ const ArticleTitle = styled.h2`
   margin-top: 2.1rem;
   line-height: 2rem;
   // font-weight: 500;
-  letter-spacing: .05em;
+  // letter-spacing: .05em;
+  word-spacing: .01em;
   font-family: var(--fontFamily-sans-alt);
   color: #000;
 }
